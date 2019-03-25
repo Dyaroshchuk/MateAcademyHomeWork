@@ -4,11 +4,11 @@ public class Outer {
 
     public void printName() {
         System.out.println("Hi I'm Outer class, nice to meet you!");
-        //Local Inner class
+        // Local Inner class
         class LocalInner {
             public void printName() {
                 System.out.println("Hi I'm Local Inner class in printName method "
-                                   + "of Outer class, nice to meet you!");
+                        + "of Outer class, nice to meet you!");
             }
         }
 

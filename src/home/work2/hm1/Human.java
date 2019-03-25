@@ -10,7 +10,7 @@ public class Human {
     private final String surname;
     private final int age;
     private final int height;
-    private final int  weight;
+    private final int weight;
 
     public Human(String name, String surname, int age, int height, int weight) {
         this.name = name;
@@ -45,7 +45,7 @@ public class Human {
         private String surname;
         private int age;
         private int height;
-        private int  weight;
+        private int weight;
 
         public Builder setName(String name) {
             this.name = name;
@@ -81,8 +81,6 @@ public class Human {
             return new Human(name, surname, age, height, weight);
         }
     }
-
-
 
 
 }
