@@ -3,7 +3,6 @@ package home.work2.hm3;
 import java.util.Arrays;
 
 public class SortUtils {
-
     public static void main(String[] args) {
         int[] arrayForBubble = fillArray(10);
         int[] arrayForSelection = fillArray(10);
@@ -26,6 +25,7 @@ public class SortUtils {
 
     }
 
+    // Bubble sort
     private static int[] bubbleSort(int[] array) {
         boolean isSorted = false;
 
@@ -41,6 +41,7 @@ public class SortUtils {
         return array;
     }
 
+    // Selection sort
     private static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minInd = i;
@@ -54,6 +55,7 @@ public class SortUtils {
         return array;
     }
 
+    // recursively separates arrays and then with the help of the merge method combines them into one sorted
     private static int[] mergeSort(int[] array) {
         if (array.length < 2) {
             return array;
@@ -88,7 +90,7 @@ public class SortUtils {
         }
         return array;
     }
-
+    // fill array random values
     private static int[] fillArray(int length) {
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
@@ -96,12 +98,10 @@ public class SortUtils {
         }
         return array;
     }
-
+    // swaps array elements
     public static void swap(int[] array, int indOne, int indTwo) {
         int tmp = array[indOne];
         array[indOne] = array[indTwo];
         array[indTwo] = tmp;
     }
-
-
 }

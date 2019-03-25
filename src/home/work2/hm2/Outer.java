@@ -1,7 +1,6 @@
 package home.work2.hm2;
 
 public class Outer {
-
     public void printName() {
         System.out.println("Hi I'm Outer class, nice to meet you!");
         // Local Inner class
@@ -11,7 +10,6 @@ public class Outer {
                         + "of Outer class, nice to meet you!");
             }
         }
-
         LocalInner localInner = new LocalInner();
         localInner.printName();
     }

@@ -5,7 +5,6 @@ package home.work2.hm1;
  */
 
 public class Human {
-
     private final String name;
     private final String surname;
     private final int age;
@@ -81,6 +80,4 @@ public class Human {
             return new Human(name, surname, age, height, weight);
         }
     }
-
-
 }

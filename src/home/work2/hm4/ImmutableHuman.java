@@ -1,13 +1,13 @@
 package home.work2.hm4;
 
-final class ImmutableHuma {
+final class ImmutableHuman {
     private final String name;
     private final String surname;
     private final int age;
     private final int height;
     private final int weight;
 
-    public ImmutableHuma(String name, String surname, int age, int height, int weight) {
+    public ImmutableHuman(String name, String surname, int age, int height, int weight) {
         this.name = name;
         this.surname = surname;
         this.age = age;
