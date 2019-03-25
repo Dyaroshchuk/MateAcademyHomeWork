@@ -31,7 +31,7 @@ public class Recursion {
     // Taylor Row
     public static double taylorRow(int number, int count) {
         double result;
-        if (number >= count) {
+        if (count == 0) {
             return 1;
         }
         result = taylorRow(number, count - 1) + Math.pow(number, count - 1) / factorial(count - 1);;
