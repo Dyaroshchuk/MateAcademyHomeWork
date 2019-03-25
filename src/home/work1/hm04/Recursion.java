@@ -8,42 +8,38 @@ import java.util.Scanner;
  */
 
 public class Recursion {
-
-        //Factorial
-    public static int factorial(int a) {
-        if (a > 1) {
-            return a * factorial(--a);
+    // Factorial
+    public static int factorial(int count) {
+        if (count > 1) {
+            return count * factorial(--count);
         } else {
-            return a;
+            return count;
         }
     }
 
-        //Fibonacci numbers
-    public static int fib(int i) {
-        if (i == 0) {
+    // Fibonacci numbers
+    public static int fibonacci(int index) {
+        if (index == 0) {
             return 0;
         }
-        if (i == 1) {
+        if (index == 1) {
             return 1;
         }
-        return fib(i - 1) + fib(i - 2);
+        return fibonacci(index - 1) + fibonacci(index - 2);
     }
 
-        //Taylor Row
-    public static double taylorRow(int a, int x) {
+    // Taylor Row
+    public static double taylorRow(int number, int count) {
         double result;
-        if (a == 1) {
+        if (count == 1) {
             return 1;
         }
-        result = taylorRow(a - 1, x) + Math.pow(x, a - 1) / factorial(a - 1);
+        result = taylorRow(number, count - 1) + Math.pow(number, count - 1) / factorial(count - 1);;
         return result;
     }
 
-
-
     public static void main(String[] args) {
-
-        //Print 5! = 120;
+        // Print 5! = 120;
         System.out.println(factorial(5));
 
         // fill massif Fibonacci numbers, size of array input from keyboard
@@ -52,12 +48,12 @@ public class Recursion {
         int arraySize = scan.nextInt();
         int[] arrayFib = new int[arraySize];
         for (int i = 0; i < arraySize; i++) {
-            arrayFib[i] = fib(i);
+            arrayFib[i] = fibonacci(i);
         }
 
         System.out.println(Arrays.toString(arrayFib));
 
-        //Taylor Row
+        // Taylor Row
         System.out.println(taylorRow(5, 7));
     }
 }

@@ -6,12 +6,9 @@ package home.work1.hm07;
  */
 
 public class ObjectMethods implements Cloneable {
-
     public static void main(String[] args) throws CloneNotSupportedException {
-
         Human eliot = new Human("Eliot", 25, "John");
         Human secondEliot = new Human("Eliot", 25, "John");
-
 
         System.out.println(eliot.equals(secondEliot)); //method equals
         System.out.println(eliot.hashCode()); //method hashCode
@@ -28,11 +25,5 @@ public class ObjectMethods implements Cloneable {
 
         System.out.println(eliot); //information eliot
         System.out.println(thirdElior); //information eliot clone
-
-
-
-
-
-
     }
 }

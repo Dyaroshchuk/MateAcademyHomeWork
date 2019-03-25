@@ -1,16 +1,29 @@
 package home.work1.hm07;
 
+import java.util.Objects;
+
 public class Human implements Cloneable {
     private String name;
     private int age;
     private Father father;
 
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Human(String name, int age, String father) {
+        this.name = name;
+        this.age = age;
+        this.father = new Father(father);
+    }
+
     public String getFather() {
         return father.getName();
     }
 
-    public void setFather(String n) {
-        father.setName(n);
+    public void setFather(String newFather) {
+        father.setName(newFather);
     }
 
     public String getName() {
@@ -29,50 +42,29 @@ public class Human implements Cloneable {
         this.age = age;
     }
 
-    public Human(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Human(String name, int age, String father) {
-        this.name = name;
-        this.age = age;
-        this.father = new Father(father);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Human human = (Human) o;
+        return getAge() == human.getAge() &&
+                getName().equals(human.getName()) &&
+                getFather().equals(human.getFather());
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + getAge();
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        Human other = (Human) obj;
-        if (getName() != other.getName()) {
-            return false;
-        }
-        if (getAge() != other.getAge()) {
-            return false;
-        }
-        return true;
+        return Objects.hash(getName(), getAge(), getFather());
     }
 
     @Override
     public String toString() {
         return "Name: " + getName() + " Age:" + getAge() + " HashCode:"
-                        + hashCode() + "Father: " + father.getName();
+                + hashCode() + "Father: " + father.getName();
     }
 
     @Override
@@ -80,27 +72,5 @@ public class Human implements Cloneable {
         Human newHuman = (Human) super.clone();
         newHuman.father = (Father) father.clone();
         return newHuman;
-    }
-
-    class Father implements Cloneable {
-
-        private String name;
-
-        public void setName(String n) {
-            name = n;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Father(String name) {
-            this.name = name;
-        }
-
-        @Override
-        protected Father clone() throws CloneNotSupportedException {
-            return (Father) super.clone();
-        }
     }
 }
