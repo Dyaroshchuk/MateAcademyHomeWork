@@ -1,6 +1,5 @@
 package home.work1.hm01;
 
-
 /**
  * С помощью тернарного оператора написать функцию, которая будет считать исход матча.
  * Метод будет принимать 4 параметра и возвращать целое число. Футбольный матч.
@@ -14,19 +13,20 @@ package home.work1.hm01;
 
 public class FootballScore {
 
-    private static int resultFootballMatch(int factS1, int factS2, int planScore1, int planScore2) {
-        int score = factS1 == planScore1 && factS2 == planScore2 ? 2 :
-                    (factS1 > factS2 && planScore1 > factS2)
-                    || (factS1 < factS2 && planScore1 < planScore2) ? 1 : 0;
+    private static int resultFootballMatch(int firstTeamScore, int secondTeamScore,
+                                           int firstTeamBetScore, int secondTeamBetScore) {
+        int score = firstTeamScore == firstTeamBetScore && secondTeamScore == secondTeamBetScore
+                ? 2 : (firstTeamScore > secondTeamScore && firstTeamBetScore > secondTeamScore)
+                || (firstTeamScore < secondTeamScore && firstTeamBetScore < secondTeamBetScore) ? 1 : 0;
         return score;
     }
 
     public static void main(String[] args) {
 
         System.out.println(resultFootballMatch(2, 4, 3, 2)); // result 0
-        System.out.println(resultFootballMatch(2,1,2,1)); // result 2
-        System.out.println(resultFootballMatch(2,5,1,3)); // result 1
-        System.out.println(resultFootballMatch(2,2,2,2)); // result 2
+        System.out.println(resultFootballMatch(2, 1, 2, 1)); // result 2
+        System.out.println(resultFootballMatch(2, 5, 1, 3)); // result 1
+        System.out.println(resultFootballMatch(2, 2, 2, 2)); // result 2
 
     }
 }
