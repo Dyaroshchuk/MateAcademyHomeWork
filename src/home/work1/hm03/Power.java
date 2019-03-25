@@ -5,7 +5,6 @@ package home.work1.hm03;
  */
 
 public class Power {
-
     public static int myPow(int number, int pow) {
         if (pow == 0) {
             return 1;
@@ -21,6 +20,4 @@ public class Power {
     public static void main(String[] args) {
         System.out.println(myPow(12, 2)); // check pow result 144
     }
-
-
 }

@@ -12,7 +12,6 @@ package home.work1.hm01;
  */
 
 public class FootballScore {
-
     private static int resultFootballMatch(int firstTeamScore, int secondTeamScore,
                                            int firstTeamBetScore, int secondTeamBetScore) {
         int score = firstTeamScore == firstTeamBetScore && secondTeamScore == secondTeamBetScore

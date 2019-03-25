@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class Recursion {
     // Factorial
-    public static int factorial(int number) {
-        if (number > 1) {
-            return number * factorial(--number);
+    public static int factorial(int count) {
+        if (count > 1) {
+            return count * factorial(--count);
         } else {
-            return number;
+            return count;
         }
     }
 
@@ -34,7 +34,7 @@ public class Recursion {
         if (number == 1) {
             return 1;
         }
-        result = taylorRow(number - 1, count) + Math.pow(count, number - 1) / factorial(number - 1);
+        result = taylorRow(number - 1, count) + Math.pow(number, count - 1) / factorial(number - 1);
         return result;
     }
 
