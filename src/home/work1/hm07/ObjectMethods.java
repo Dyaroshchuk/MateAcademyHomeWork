@@ -12,7 +12,6 @@ public class ObjectMethods implements Cloneable {
         Human eliot = new Human("Eliot", 25, "John");
         Human secondEliot = new Human("Eliot", 25, "John");
 
-
         System.out.println(eliot.equals(secondEliot)); //method equals
         System.out.println(eliot.hashCode()); //method hashCode
         System.out.println(secondEliot.toString()); //toString
@@ -28,11 +27,5 @@ public class ObjectMethods implements Cloneable {
 
         System.out.println(eliot); //information eliot
         System.out.println(thirdElior); //information eliot clone
-
-
-
-
-
-
     }
 }

@@ -9,8 +9,8 @@ public class Human implements Cloneable {
         return father.getName();
     }
 
-    public void setFather(String n) {
-        father.setName(n);
+    public void setFather(String newFather) {
+        father.setName(newFather);
     }
 
     public String getName() {
@@ -72,7 +72,7 @@ public class Human implements Cloneable {
     @Override
     public String toString() {
         return "Name: " + getName() + " Age:" + getAge() + " HashCode:"
-                        + hashCode() + "Father: " + father.getName();
+                + hashCode() + "Father: " + father.getName();
     }
 
     @Override
@@ -80,27 +80,5 @@ public class Human implements Cloneable {
         Human newHuman = (Human) super.clone();
         newHuman.father = (Father) father.clone();
         return newHuman;
-    }
-
-    class Father implements Cloneable {
-
-        private String name;
-
-        public void setName(String n) {
-            name = n;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Father(String name) {
-            this.name = name;
-        }
-
-        @Override
-        protected Father clone() throws CloneNotSupportedException {
-            return (Father) super.clone();
-        }
     }
 }
