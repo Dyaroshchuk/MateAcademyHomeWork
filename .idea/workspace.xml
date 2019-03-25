@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf1767fc-7775-4e24-bbba-f24494902fa7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work1/hm03/Power.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work1/hm03/Power.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/ClassTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/ClassTypes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$1LocalInner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$1LocalInner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$Inner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$Inner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$StaticInner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer$StaticInner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mate.academy.homework/home/work2/hm2/Outer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home/work2/hm1/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/work2/hm1/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home/work2/hm2/ClassTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/work2/hm2/ClassTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home/work2/hm2/Outer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/work2/hm2/Outer.java" afterDir="false" />
-    </list>
+    <list default="true" id="cf1767fc-7775-4e24-bbba-f24494902fa7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/home/work1/hm01/FootballScore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            <state relative-caret-position="153">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -232,7 +221,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553498826363" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553499789734" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -619,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/work1/hm01/FootballScore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        <state relative-caret-position="153">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
         </state>
       </provider>
     </entry>
