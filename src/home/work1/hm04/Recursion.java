@@ -31,10 +31,10 @@ public class Recursion {
     // Taylor Row
     public static double taylorRow(int number, int count) {
         double result;
-        if (number == 1) {
+        if (number >= count) {
             return 1;
         }
-        result = taylorRow(number - 1, count) + Math.pow(number, count - 1) / factorial(number - 1);
+        result = taylorRow(number, count - 1) + Math.pow(number, count - 1) / factorial(count - 1);;
         return result;
     }
 

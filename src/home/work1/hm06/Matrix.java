@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 
 public class Matrix {
-        // method which return Max value of array
+    // method which return Max value of array
     public static int getMax(int[][] matrix) {
         int result = Integer.MIN_VALUE;
 
