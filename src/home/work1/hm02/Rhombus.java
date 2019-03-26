@@ -8,11 +8,11 @@ package home.work1.hm02;
 public class Rhombus {
     public static void printRhombus(int size) {
         int row = 0;
-        for (int i = size; i > 0; i--) { // top Rhombus
+        for (int i = size; i > 0; i--) { // print top Rhombus
             printRhombusSymbols(row, i);
             row++;
         }
-        for (int i = 0; i < size; i++) { // bottom top Rhombus
+        for (int i = 0; i < size; i++) { // print bottom top Rhombus
             printRhombusSymbols(row, i);
             row--;
         }
