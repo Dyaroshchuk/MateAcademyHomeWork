@@ -1,6 +1,6 @@
 package home.work2.hm1;
 
-//class to check Builder pattern
+// class to check Builder pattern
 public class Main{
 
     public static void main(String[] args) {
