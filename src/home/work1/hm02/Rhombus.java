@@ -7,20 +7,21 @@ package home.work1.hm02;
 
 public class Rhombus {
     public static void printRhombus(int size) {
-        int row = 0;
+        int row = 1;
         for (int i = size; i > 0; i--) { // print top Rhombus
             printRhombusSymbols(row, i);
             row++;
         }
-        for (int i = 0; i < size; i++) { // print bottom top Rhombus
-            printRhombusSymbols(row, i);
+        for (int i = 0; i < size - 1; i++) { // print bottom top Rhombus
+            // we need decrease row in 2 and i increase in 2 to use printRhombusSymbols
+            printRhombusSymbols(row - 2, i + 2);
             row--;
         }
     }
 
     public static void printRhombusSymbols(int row, int speces) {
         for (int j = 0; j <= speces; j++) {
-            System.out.print(" ");
+            System.out.print("-");
         }
         for (int j = 1; j <= row; j++) {
             System.out.print("* ");
