@@ -7,28 +7,30 @@ package home.work1.hm02;
 
 public class Rhombus {
     public static void printRhombus(int size) {
-        size = size / 2;
-        for (int i = 1; i < size + 1; ++i) { // Rhombus top
-            printRhombusSymbols(size, i);
+        int row = 0;
+        for (int i = size; i > 0; i--) { // top Rhombus
+            printRhombusSymbols(row, i);
+            row++;
         }
-        for (int i = size + 1; i >= 1; --i) { // Rhombus bottom
-            printRhombusSymbols(size, i);
+        for (int i = 0; i < size; i++) { // bottom top Rhombus
+            printRhombusSymbols(row, i);
+            row--;
         }
     }
 
-    // method which will print " " and "*" for Rhombus
-    public static void printRhombusSymbols(int size, int index) {
-        for (int j = size + 1; j > index; --j) {
+    public static void printRhombusSymbols(int row, int speces) {
+        for (int j = 0; j <= speces; j++) {
             System.out.print(" ");
         }
-
-        for (int j = 1; j < 2 * index; ++j) {
-            System.out.print("*");
+        for (int j = 1; j <= row; j++) {
+            System.out.print("* ");
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        printRhombus(14); // print diamond
+        printRhombus(7); // print Rhombus with max 7 "*"
+        System.out.println();
+        printRhombus(6); // print Rhombus with max 6 "*"
     }
 }
