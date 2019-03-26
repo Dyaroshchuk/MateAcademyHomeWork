@@ -8,19 +8,23 @@ package home.work1.hm02;
 public class Rhombus {
     public static void printRhombus(int size) {
         int row = 1;
-        for (int i = size; i > 0; i--) { // print top Rhombus
+
+        // print top Rhombus
+        for (int i = size; i > 0; i--) {
             printRhombusSymbols(row, i);
             row++;
         }
-        for (int i = 0; i < size - 1; i++) { // print bottom top Rhombus
+
+        // print bottom top Rhombus
+        for (int i = 0; i < size - 1; i++) {
             // we need decrease row in 2 and i increase in 2 to use printRhombusSymbols
             printRhombusSymbols(row - 2, i + 2);
             row--;
         }
     }
 
-    public static void printRhombusSymbols(int row, int speces) {
-        for (int j = 0; j <= speces; j++) {
+    public static void printRhombusSymbols(int row, int spaces) {
+        for (int j = 0; j <= spaces; j++) {
             System.out.print(" ");
         }
         for (int j = 1; j <= row; j++) {
