@@ -12,10 +12,8 @@ public class Recursion {
     public static int factorial(int count) {
         if (count > 1) {
             return count * factorial(--count);
-        } else if (count == 0) {
-            return 1;
         } else {
-            return count;
+            return 1;
         }
     }
 
@@ -33,16 +31,16 @@ public class Recursion {
     // Taylor Row
     public static double taylorRow(int number, int count) {
         double result;
-        if (count == 1) {
+        if (count == 0) {
             return 1;
         }
-        result = taylorRow(number, count) + Math.pow(number, count) / factorial(count);
+        result = taylorRow(number, count - 1) + Math.pow(number, count) / factorial(count);
         return result;
     }
 
     public static void main(String[] args) {
         // Print 5! = 120;
-        System.out.println(factorial(0));
+        System.out.println(factorial(1));
 
         // fill massif Fibonacci numbers, size of array input from keyboard
         Scanner scan = new Scanner(System.in);
