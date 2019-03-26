@@ -1,6 +1,6 @@
 package home.work2.hm4;
 
-final class ImmutableHuman {
+public final class ImmutableHuman {
     private final String name;
     private final String surname;
     private final int age;

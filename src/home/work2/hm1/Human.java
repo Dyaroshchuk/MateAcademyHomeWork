@@ -11,12 +11,12 @@ public class Human {
     private final int height;
     private final int weight;
 
-    public Human(String name, String surname, int age, int height, int weight) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.height = height;
-        this.weight = weight;
+    private Human(Builder builder) {
+        this.name = builder.name;
+        this.surname = builder.surname;
+        this.age = builder.age;
+        this.height = builder.height;
+        this.weight = builder.weight;
     }
 
     public String getName() {
@@ -41,43 +41,42 @@ public class Human {
 
     public static class Builder {
         private String name;
-        private String surname;
-        private int age;
-        private int height;
-        private int weight;
+        private String surname = "";
+        private int age = 0;
+        private int height = 0;
+        private int weight = 0;
+
+        public Builder(String name) {
+            this.name = name;
+        }
 
         public Builder setName(String name) {
             this.name = name;
-
             return this;
         }
 
         public Builder setSurname(String surname) {
             this.surname = surname;
-
             return this;
         }
 
         public Builder setAge(int age) {
             this.age = age;
-
             return this;
         }
 
         public Builder setHeight(int height) {
             this.height = height;
-
             return this;
         }
 
         public Builder setWeight(int weight) {
             this.weight = weight;
-
             return this;
         }
 
         public Human build() {
-            return new Human(name, surname, age, height, weight);
+            return new Human(this);
         }
     }
 }

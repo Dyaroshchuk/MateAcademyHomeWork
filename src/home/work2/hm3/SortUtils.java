@@ -44,13 +44,13 @@ public class SortUtils {
     // Selection sort
     private static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            int minInd = i;
+            int indexOfMinValue = i;
             for (int j = i; j < array.length; j++) {
-                if (array[j] < array[minInd]) {
-                    minInd = j;
+                if (array[j] < array[indexOfMinValue]) {
+                    indexOfMinValue = j;
                 }
             }
-            swap(array, minInd, i);
+            swap(array, indexOfMinValue, i);
         }
         return array;
     }
@@ -62,29 +62,29 @@ public class SortUtils {
         }
 
         int midIndex = array.length / 2;
-        int[] arrayOne = Arrays.copyOfRange(array, 0, midIndex);
-        int[] arrayTwo = Arrays.copyOfRange(array, midIndex, array.length);
-        return merge(mergeSort(arrayOne), mergeSort(arrayTwo));
+        int[] arrayLeft = Arrays.copyOfRange(array, 0, midIndex);
+        int[] arrayRight = Arrays.copyOfRange(array, midIndex, array.length);
+        return merge(mergeSort(arrayLeft), mergeSort(arrayRight));
 
     }
 
     // merge two arrays
-    private static int[] merge(int[] arrayOne, int[] arrayTwo) {
-        int arraysLength = arrayOne.length + arrayTwo.length;
+    private static int[] merge(int[] arrayLeft, int[] arrayRight) {
+        int arraysLength = arrayLeft.length + arrayRight.length;
         int[] array = new int[arraysLength];
-        int indOne = 0;
-        int indTwo = 0;
+        int indexLeftArray = 0;
+        int indexRightArray = 0;
 
         for (int i = 0; i < arraysLength; i++) {
-            if (indOne == arrayOne.length) {
-                array[i] = arrayTwo[indTwo++];
-            } else if (indTwo == arrayTwo.length) {
-                array[i] = arrayOne[indOne++];
+            if (indexLeftArray == arrayLeft.length) {
+                array[i] = arrayRight[indexRightArray++];
+            } else if (indexRightArray == arrayRight.length) {
+                array[i] = arrayLeft[indexLeftArray++];
             } else {
-                if (arrayOne[indOne] < arrayTwo[indTwo]) {
-                    array[i] = arrayOne[indOne++];
+                if (arrayLeft[indexLeftArray] < arrayRight[indexRightArray]) {
+                    array[i] = arrayLeft[indexLeftArray++];
                 } else {
-                    array[i] = arrayTwo[indTwo++];
+                    array[i] = arrayRight[indexRightArray++];
                 }
             }
         }
@@ -99,9 +99,9 @@ public class SortUtils {
         return array;
     }
     // swaps array elements
-    public static void swap(int[] array, int indOne, int indTwo) {
-        int tmp = array[indOne];
-        array[indOne] = array[indTwo];
-        array[indTwo] = tmp;
+    public static void swap(int[] array, int firstIndex, int secondIndex) {
+        int tmp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = tmp;
     }
 }
