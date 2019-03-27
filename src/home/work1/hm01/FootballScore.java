@@ -12,20 +12,13 @@ package home.work1.hm01;
  */
 
 public class FootballScore {
-<<<<<<< HEAD
-=======
 
->>>>>>> Home_Work_2
     private static int resultFootballMatch(int firstTeamScore, int secondTeamScore,
                                            int firstTeamBetScore, int secondTeamBetScore) {
         int score = firstTeamScore == firstTeamBetScore && secondTeamScore == secondTeamBetScore
                 ? 2 : (firstTeamScore > secondTeamScore && firstTeamBetScore > secondTeamScore)
-<<<<<<< HEAD
                 || (firstTeamScore < secondTeamScore && firstTeamBetScore < secondTeamBetScore)
                 ? 1 : 0;
-=======
-                || (firstTeamScore < secondTeamScore && firstTeamBetScore < secondTeamBetScore) ? 1 : 0;
->>>>>>> Home_Work_2
         return score;
     }
 
@@ -34,9 +27,5 @@ public class FootballScore {
         System.out.println(resultFootballMatch(2, 1, 2, 1)); // result 2
         System.out.println(resultFootballMatch(2, 5, 1, 3)); // result 1
         System.out.println(resultFootballMatch(2, 2, 2, 2)); // result 2
-<<<<<<< HEAD
-=======
-
->>>>>>> Home_Work_2
     }
 }
