@@ -41,10 +41,10 @@ public class Human {
 
     public static class Builder {
         private String name;
-        private String surname = "";
-        private int age = 0;
-        private int height = 0;
-        private int weight = 0;
+        private String surname;
+        private int age;
+        private int height;
+        private int weight;
 
         public Builder(String name) {
             this.name = name;

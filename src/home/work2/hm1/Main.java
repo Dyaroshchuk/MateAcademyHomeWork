@@ -8,6 +8,7 @@ public class Main{
                 .setAge(25)
                 .setHeight(180)
                 .build();
+
         Human john = new Human.Builder("John")
                 .setSurname("Black")
                 .build();
