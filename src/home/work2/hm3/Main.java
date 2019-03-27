@@ -10,19 +10,19 @@ public class Main {
         int[] arrayForMerge = sort.fillArray(10);
 
         // check Bubble sort
-        System.out.println("bubble " + Arrays.toString(arrayForBubble));
+        System.out.println("Before bubble sort " + Arrays.toString(arrayForBubble));
         sort.bubbleSort(arrayForBubble);
-        System.out.println("bubble " + Arrays.toString(arrayForBubble));
+        System.out.println("After bubble sort " + Arrays.toString(arrayForBubble));
 
         // check Selection sort
-        System.out.println("Selection " + Arrays.toString(arrayForSelection));
+        System.out.println("Before Selection sort " + Arrays.toString(arrayForSelection));
         sort.selectionSort(arrayForSelection);
-        System.out.println("Selection " + Arrays.toString(arrayForSelection));
+        System.out.println("After Selection sort " + Arrays.toString(arrayForSelection));
 
         // check Bubble sort
-        System.out.println("Merge " + Arrays.toString(arrayForMerge));
+        System.out.println("Before Merge sort " + Arrays.toString(arrayForMerge));
         int[] arrayForMergeorted = sort.mergeSort(arrayForMerge);
-        System.out.println("Merge " + Arrays.toString(arrayForMergeorted));
+        System.out.println("After Merge sort " + Arrays.toString(arrayForMergeorted));
 
     }
 }
