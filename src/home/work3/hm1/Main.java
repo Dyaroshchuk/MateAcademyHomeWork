@@ -1,4 +1,4 @@
-package home.work3;
+package home.work3.hm1;
 
 public class Main {
 

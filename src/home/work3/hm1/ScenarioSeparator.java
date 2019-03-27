@@ -1,4 +1,4 @@
-package home.work3;
+package home.work3.hm1;
 
 /**
  * home work from https://stepik.org/lesson/12762/step/10?unit=3110
