@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         ArraysMethods arraysMethods = new ArraysMethods();
-        int[] arrayOne = arraysMethods.fillArray(5);
+        int[] arrayOne = arraysMethods.fillArray(7);
         int[] arrayTwo = arraysMethods.fillArray(7);
 
         // sorting arrays
