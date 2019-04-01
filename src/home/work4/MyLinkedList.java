@@ -3,17 +3,22 @@ package home.work4;
 import javax.xml.soap.Node;
 
 public class MyLinkedList<T> implements MyList<T> {
-    MyNode<T> firstNode;
-    MyNode<T> lastNode;
-    int size = 0;
-
-    public void MyLinkedList() {
-    }
+    private MyNode<T> firstNode;
+    private MyNode<T> lastNode;
+    private int size = 0;
 
     private void checkIndex(int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException
                     ("Your index: " + index + " bigger than List size: " + size);
+    }
+
+    private MyNode<T> getNode(int index) {
+        MyNode NodeInIndex = firstNode;
+        for (int i = 0; i < index; i++) {
+            NodeInIndex = NodeInIndex.next;
+        }
+        return NodeInIndex;
     }
 
     @Override
@@ -35,10 +40,7 @@ public class MyLinkedList<T> implements MyList<T> {
         if (index == size) {
             add(value);
         } else {
-            MyNode NodeInIndex = firstNode;
-            for (int i = 0; i < index; i++) {
-                NodeInIndex = NodeInIndex.next;
-            }
+            MyNode NodeInIndex = getNode(index);
             MyNode previousNode = NodeInIndex.previous;
             MyNode currentNode = new MyNode(previousNode, value, NodeInIndex);
             if (previousNode == null) {
@@ -62,10 +64,7 @@ public class MyLinkedList<T> implements MyList<T> {
     @Override
     public T get(int index) {
         checkIndex(index);
-        MyNode<T> desiredNode = firstNode;
-        for (int i = 0; i < index; i++) {
-            desiredNode = desiredNode.next;
-        }
+        MyNode<T> desiredNode = getNode(index);
         return desiredNode.value;
     }
 
@@ -75,10 +74,7 @@ public class MyLinkedList<T> implements MyList<T> {
         if (index == size) {
             lastNode.value = value;
         } else {
-            MyNode NodeInIndex = firstNode;
-            for (int i = 0; i < index; i++) {
-                NodeInIndex = NodeInIndex.next;
-            }
+            MyNode NodeInIndex = getNode(index);
             NodeInIndex.value = value;
         }
     }
@@ -86,10 +82,7 @@ public class MyLinkedList<T> implements MyList<T> {
     @Override
     public T remove(int index) {
         checkIndex(index);
-        MyNode<T> NodeInIndex = firstNode;
-        for (int i = 0; i < index; i++) {
-            NodeInIndex = NodeInIndex.next;
-        }
+        MyNode<T> NodeInIndex = getNode(index);
         if (NodeInIndex.previous == null) {
             firstNode = NodeInIndex.next;
             NodeInIndex.next.previous = null;
@@ -127,7 +120,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public boolean isEmpty() {
-        return size > 0 ? true : false;
+        return size == 0;
     }
 
     @Override
@@ -139,5 +132,17 @@ public class MyLinkedList<T> implements MyList<T> {
             result.append(", ").append(currentNode.value.toString());
         }
         return result.toString();
+    }
+
+    private class MyNode<T> {
+       private MyNode<T> previous;
+       private MyNode<T> next;
+       private T value;
+
+        public MyNode(MyNode previous, T value, MyNode next){
+            this.previous = previous;
+            this.value = value;
+            this.next = next;
+        }
     }
 }

@@ -1,11 +1,8 @@
 package home.work4;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
-
         // MyLinkedList check methods
         MyList<String> myLinkedList = new MyLinkedList<>();
 
@@ -24,7 +21,7 @@ public class Main {
         System.out.println("array size is " + myLinkedList.size());
         System.out.println(myLinkedList);
 
-        MyLinkedList<String> myLinkedListTwo = new MyLinkedList<>();
+        MyList<String> myLinkedListTwo = new MyLinkedList<>();
 
         myLinkedListTwo.add("value second list");
         myLinkedListTwo.add("one more value second list");
