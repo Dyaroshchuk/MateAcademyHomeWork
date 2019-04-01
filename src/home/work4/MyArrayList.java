@@ -1,10 +1,12 @@
 package home.work4;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class MyArrayList<T> implements MyList<T> {
     private Object[] arrayValue;
     private int size = 0;
+    private static final int DEFAULT_CAPACITY = 10;
 
     public MyArrayList(int arrayCapacity) {
         if (arrayCapacity < 0) throw new IllegalArgumentException("Illegal size" + arrayCapacity);
@@ -12,20 +14,9 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     public MyArrayList() {
-        this(10);
+        this(DEFAULT_CAPACITY);
     }
 
-    private void increaseArrayCapacity(int arraySize) {
-        int oldArraySize = arrayValue.length;
-        int newArraySize = oldArraySize + (oldArraySize >> 1);
-        arrayValue = Arrays.copyOf(arrayValue, newArraySize);
-    }
-
-    private void decrementArrayCapacity(int arraySize) {
-        int oldArraySize = arrayValue.length;
-        int newArraySize = oldArraySize - (oldArraySize >> 1);
-        arrayValue = Arrays.copyOf(arrayValue, newArraySize);
-    }
 
     private void checkIndex(int index) {
         if (index < 0 || index > size)
@@ -39,10 +30,12 @@ public class MyArrayList<T> implements MyList<T> {
 
     private void incrementOrDecrementArrayCapacity(int size) {
         if (arrayValue.length <= size) {
-            increaseArrayCapacity(arrayValue.length);
+            arrayValue = Arrays.copyOf(arrayValue,
+                    arrayValue.length + arrayValue.length * 2);
         }
         if (arrayValue.length > size << 1) {
-            decrementArrayCapacity(arrayValue.length);
+            arrayValue = Arrays.copyOf(arrayValue,
+                    arrayValue.length + arrayValue.length / 2);
         }
     }
 
@@ -94,9 +87,9 @@ public class MyArrayList<T> implements MyList<T> {
         for (int i = 0; i < size; i++) {
             if (value.equals(arrayValue[i])) {
                 return remove(i);
-            }
+            } else throw new NoSuchElementException("This array doesn't contain value: " + value);
         }
-        return null;
+        return value;
     }
 
     @Override
