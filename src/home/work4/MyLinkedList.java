@@ -10,6 +10,12 @@ public class MyLinkedList<T> implements MyList<T> {
     public void MyLinkedList() {
     }
 
+    private void checkIndex(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException
+                    ("Your index: " + index + " bigger than List size: " + size);
+    }
+
     @Override
     public void add(T value) {
         MyNode currentNode = lastNode;
@@ -133,11 +139,5 @@ public class MyLinkedList<T> implements MyList<T> {
             result.append(", ").append(currentNode.value.toString());
         }
         return result.toString();
-    }
-
-    public void checkIndex(int index) {
-        if (index < 0 || index > size)
-            throw new IndexOutOfBoundsException
-                    ("Your index: " + index + " bigger than List size: " + size);
     }
 }
