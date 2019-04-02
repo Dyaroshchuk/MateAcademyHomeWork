@@ -69,6 +69,7 @@ public class SortUtils {
         }
         return array;
     }
+
     // fill array random values
     public static int[] fillArray(int length) {
         int[] array = new int[length];
@@ -77,6 +78,7 @@ public class SortUtils {
         }
         return array;
     }
+
     // swaps array elements
     public static void swap(int[] array, int firstIndex, int secondIndex) {
         int temporary = array[firstIndex];
