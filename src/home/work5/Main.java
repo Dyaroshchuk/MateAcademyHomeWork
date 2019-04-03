@@ -9,6 +9,7 @@ public class Main {
         myMap.put("Honda", 12000);
         myMap.put("Lada", 5000);
         myMap.put("Bentley", 100000);
+        myMap.put("Lada", 7000);
         System.out.println(myMap.remove("Lada"));
 
         System.out.println(myMap.size());

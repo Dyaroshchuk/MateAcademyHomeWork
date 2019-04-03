@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class MyHashMap<K, V> implements MyMap<K, V> {
-    private static int DEFAULT_CAPACITY = 16;
-    private static int Maximum_Capacity = 1 << 30;
+    private static final int DEFAULT_CAPACITY = 16;
+    private static final int Maximum_Capacity = 1 << 30;
     private Node<K, V>[] table;
     private int size = 0;
 
