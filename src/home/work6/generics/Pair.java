@@ -11,9 +11,6 @@ public class Pair<T, V> {
         this.second = second;
     }
 
-    private Pair() {
-    }
-
     public T getFirst() {
         return first;
     }

@@ -16,19 +16,7 @@ public class Main {
         animals[2] = new Animal("Dog");
         animals[3] = new Animal("Turtle");
         animals[4] = new Animal("Dolphin");
-        byte[] byteArrayAnimals = null;
-
-        try (ByteArrayOutputStream outputArray = new ByteArrayOutputStream();
-             ObjectOutputStream oos = new ObjectOutputStream(outputArray)) {
-            oos.writeInt(animals.length);
-            for (int i = 0; i < animals.length; i++) {
-                oos.writeObject(animals[i]);
-            }
-            oos.flush();
-            byteArrayAnimals = outputArray.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        byte[] byteArrayAnimals = serializationArray(animals);
 
         System.out.println(Arrays.toString(animals));
         System.out.println(Arrays.toString(byteArrayAnimals));
@@ -48,5 +36,22 @@ public class Main {
         } catch (ClassCastException | IOException | ClassNotFoundException e) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public static byte[] serializationArray(Animal[] animals) {
+        try (ByteArrayOutputStream outputArray = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(outputArray)) {
+            byte[] byteArrayAnimals = null;
+            oos.writeInt(animals.length);
+            for (int i = 0; i < animals.length; i++) {
+                oos.writeObject(animals[i]);
+            }
+            oos.flush();
+            byteArrayAnimals = outputArray.toByteArray();
+            return byteArrayAnimals;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        throw new IllegalArgumentException();
     }
 }
