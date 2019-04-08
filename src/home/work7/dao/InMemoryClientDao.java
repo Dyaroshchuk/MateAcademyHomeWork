@@ -2,7 +2,6 @@ package home.work7.dao;
 
 import home.work7.di.Component;
 import home.work7.model.Client;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,5 +18,13 @@ public class InMemoryClientDao implements Dao<Client> {
     @Override
     public Client get() {
         return inMemoryStorage.get(0);
+    }
+
+    public List<Client> getAll() {
+        List<Client> getArray = new ArrayList<>();
+        for (int i = 0; i < inMemoryStorage.size(); i++) {
+            getArray.add(inMemoryStorage.get(i));
+        }
+        return getArray;
     }
 }

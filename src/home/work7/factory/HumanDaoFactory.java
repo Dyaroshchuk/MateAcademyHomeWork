@@ -1,7 +1,10 @@
 package home.work7.factory;
 
-import home.work7.dao.*;
+import home.work7.dao.Dao;
+import home.work7.dao.FileHumanDao;
+import home.work7.dao.InMemoryHumanDao;
 import home.work7.service.PropertyLoader;
+
 import java.io.IOException;
 
 public class HumanDaoFactory {

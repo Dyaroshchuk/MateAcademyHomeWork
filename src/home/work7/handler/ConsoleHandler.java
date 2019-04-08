@@ -21,7 +21,7 @@ public class ConsoleHandler {
             System.out.println("1 - to client, 2 - to guest, 3 - exit");
             int consoleChoice = scanner.nextInt();
             switch (consoleChoice) {
-                case  1:
+                case 1:
                     operationForClient(scanner);
                     break;
                 case 2:
@@ -42,7 +42,7 @@ public class ConsoleHandler {
                     addClientInfo(scanner);
                     break;
                 case 2:
-                    System.out.println(clientDao.get());
+                    System.out.println(clientDao.getAll());
                     break;
                 case 3:
                     return;
@@ -59,7 +59,7 @@ public class ConsoleHandler {
                     addHumanInfo(scanner);
                     break;
                 case 2:
-                    System.out.println(humanDao.get());
+                    System.out.println(humanDao.getAll());
                     break;
                 case 3:
                     return;

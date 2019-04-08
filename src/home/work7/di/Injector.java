@@ -1,9 +1,14 @@
 package home.work7.di;
 
-import home.work7.dao.*;
+import home.work7.dao.Dao;
+import home.work7.dao.FileClientDao;
+import home.work7.dao.FileHumanDao;
+import home.work7.dao.InMemoryClientDao;
+import home.work7.dao.InMemoryHumanDao;
 import home.work7.factory.ClientDaoFactory;
 import home.work7.factory.HumanDaoFactory;
 import home.work7.handler.ConsoleHandler;
+
 import java.lang.reflect.Field;
 
 public class Injector {
@@ -22,9 +27,9 @@ public class Injector {
                 openAccessToClientDao(field, fileClientDaoClass, inMemoryClientDaoClass);
 
                 openAccessToHumanDao(field, fileHumanDaoClass, inMemoryHumanDaoClass);
-                }
             }
         }
+    }
 
     private static void openAccessToClientDao(Field field, Class fileDaoClass, Class inMemoryDaoClass)
             throws IllegalAccessException {

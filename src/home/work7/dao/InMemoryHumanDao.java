@@ -20,4 +20,13 @@ public class InMemoryHumanDao implements Dao<Human> {
     public Human get() {
         return inMemoryStorage.get(0);
     }
+
+    @Override
+    public List<Human> getAll() {
+        List<Human> getArray = new ArrayList<>();
+        for (int i = 0; i < inMemoryStorage.size(); i++) {
+            getArray.add(inMemoryStorage.get(i));
+        }
+        return getArray;
+    }
 }
