@@ -87,9 +87,9 @@ public class MyArrayList<T> implements MyList<T> {
         for (int i = 0; i < size; i++) {
             if (value.equals(arrayValue[i])) {
                 return remove(i);
-            } else throw new NoSuchElementException("This array doesn't contain value: " + value);
+            }
         }
-        return value;
+         throw new NoSuchElementException("This array doesn't contain value: " + value);
     }
 
     @Override

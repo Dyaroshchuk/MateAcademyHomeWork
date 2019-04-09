@@ -60,11 +60,8 @@ public class SortUtils {
             } else if (indexRightArray == arrayRight.length) {
                 array[i] = arrayLeft[indexLeftArray++];
             } else {
-                if (arrayLeft[indexLeftArray] < arrayRight[indexRightArray]) {
-                    array[i] = arrayLeft[indexLeftArray++];
-                } else {
-                    array[i] = arrayRight[indexRightArray++];
-                }
+                array[i] = arrayLeft[indexLeftArray] < arrayRight[indexRightArray]
+                        ? arrayLeft[indexLeftArray++] : arrayRight[indexRightArray++];
             }
         }
         return array;

@@ -1,7 +1,5 @@
 package home.work4;
 
-import javax.xml.soap.Node;
-
 public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> firstNode;
     private MyNode<T> lastNode;

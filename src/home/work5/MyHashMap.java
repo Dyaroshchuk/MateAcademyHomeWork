@@ -1,7 +1,5 @@
 package home.work5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
