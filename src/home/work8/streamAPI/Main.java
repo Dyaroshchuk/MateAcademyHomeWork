@@ -13,7 +13,7 @@ public class Main {
         List<MailMessage> messages = createMailMessagesList();
 
         // Создание почтового сервиса.
-        MailService<String> mailService = new MailService<>();
+        MailService<String> mailService = createMailService();
 
         // Обработка списка писем почтовым сервисом
         messages.stream().forEachOrdered(mailService);
@@ -43,7 +43,7 @@ public class Main {
         List<Salary> salaryList = createSalaryList();
 
         // Создание почтового сервиса, обрабатывающего зарплаты.
-        MailService<Integer> salaryService = new MailService<>();
+        MailService<Integer> salaryService = createMailService();
 
         // Обработка списка зарплат почтовым сервисом
         salaryList.forEach(salaryService);
@@ -98,6 +98,10 @@ public class Main {
         Salary salary3 = new Salary(randomFrom, randomTo, randomSalary);
 
         return Arrays.asList(salary1, salary2, salary3);
+    }
+
+    private static MailService createMailService() {
+        return new MailService<>();
     }
 
 
