@@ -15,7 +15,7 @@ public class Main {
         // merging arrays to one
         int[] arrayMerged = ArraysMethods.merge(arrayOne, arrayTwo);
 
-        System.out.println(Arrays.toString(arrayOne));
+        System.out.println(arrayOne);
         System.out.println(Arrays.toString(arrayTwo));
         System.out.println(Arrays.toString(arrayMerged));
     }

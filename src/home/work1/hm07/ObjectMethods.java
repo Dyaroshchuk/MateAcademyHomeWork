@@ -14,7 +14,7 @@ public class ObjectMethods implements Cloneable {
         System.out.println(eliot.hashCode()); //method hashCode
         System.out.println(secondEliot.toString()); //toString
         System.out.println(eliot.getClass()); // getCalss
-        Human thirdElior = (Human) eliot.clone(); //deep clone eliot
+        Human thirdElior = eliot.clone(); //deep clone eliot
         System.out.println();
 
         System.out.println(eliot); //information eliot
