@@ -14,8 +14,7 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        char charInIndex = (char)values[index];
-        return charInIndex;
+        return (char)values[index];
     }
 
     @Override
@@ -25,8 +24,7 @@ public class AsciiCharSequence implements CharSequence {
         for (int i = 0; i < lenghtSubSequence; i++) {
             subSequenceArray[i] = values[start++];
         }
-        AsciiCharSequence result = new AsciiCharSequence(subSequenceArray);
-        return result;
+        return new AsciiCharSequence(subSequenceArray);
     }
 
     @Override

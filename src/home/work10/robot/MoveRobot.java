@@ -9,7 +9,7 @@ public class MoveRobot {
                 i = 3;
             } catch (RobotConnectionException e) {
                 if (i == 2) {
-                    throw e;
+                    throw new RobotConnectionException("Robot is broken");
                 }
             }
         }

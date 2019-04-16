@@ -1,10 +1,10 @@
-package home.work10.hashCodeAndEquals;
+package home.work10.сomplexNumber;
 
 public class Main {
 
     public static void main(String[] args) {
-        EqualsAndHashCode firstCompare = new EqualsAndHashCode(7.5, 6.5);
-        EqualsAndHashCode secondCompare = new EqualsAndHashCode(15.5, 3.5);
+        ComplexNumber firstCompare = new ComplexNumber(7.5, 6.5);
+        ComplexNumber secondCompare = new ComplexNumber(15.5, 3.5);
 
         System.out.println(firstCompare.equals(secondCompare));
         System.out.println(firstCompare.hashCode() == secondCompare.hashCode());
