@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-
 public class TextCounter {
 
     // This method print 10 most popular words in input sentence
