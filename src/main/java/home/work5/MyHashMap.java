@@ -10,7 +10,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     private int size = 0;
 
     private int getIndex(K key) {
-        return (key == null) ? 0 : key.hashCode() % table.length;
+        return (key == null) ? 0 : Math.abs(key.hashCode() % table.length);
     }
 
     private Node<K, V> getNode(K key) {
@@ -67,10 +67,10 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     @Override
     public V remove(K key) {
-        V remuvedValue = getNode(key).value;
+        V removedValue = getNode(key).value;
         table[getIndex(key)] = null;
         size--;
-        return remuvedValue;
+        return removedValue;
     }
 
     @Override

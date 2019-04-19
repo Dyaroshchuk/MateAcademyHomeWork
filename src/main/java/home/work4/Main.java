@@ -39,7 +39,6 @@ public class Main {
         System.out.println("removed firs value is: " + myArrayList.remove(0));
         myArrayList.add("firstAgain", 0);
         myArrayList.remove("firstAgain");
-        System.out.println(myArrayList.remove("ok"));
         myArrayList.set("newSecond", 0);
 
         System.out.println("array size is: " + myArrayList.size());

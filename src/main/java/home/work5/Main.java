@@ -17,5 +17,15 @@ public class Main {
 
         System.out.println(myMap);
         myMap.clear();
+
+        MyMap<String, String> testMap = new MyHashMap<>();
+
+        testMap.put("first", "Monday");
+        testMap.put("second", "Tuesday");
+
+        System.out.println();
+        System.out.println(testMap);
+        System.out.println(testMap.size());
+
     }
 }

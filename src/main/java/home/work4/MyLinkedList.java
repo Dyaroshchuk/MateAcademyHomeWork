@@ -81,7 +81,11 @@ public class MyLinkedList<T> implements MyList<T> {
     public T remove(int index) {
         checkIndex(index);
         MyNode<T> NodeInIndex = getNode(index);
-        if (NodeInIndex.previous == null) {
+        if (NodeInIndex.previous == null && NodeInIndex.next == null) {
+            firstNode = null;
+            lastNode = null;
+            size--;
+        } else if (NodeInIndex.previous == null) {
             firstNode = NodeInIndex.next;
             NodeInIndex.next.previous = null;
             NodeInIndex.next = null;
