@@ -4,11 +4,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 public class MyHashMapTest {
     private MyMap<String, String> testMap;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         testMap = new MyHashMap<>();
         testMap.put("first", "Monday");
         testMap.put("second", "Tuesday");
@@ -29,6 +31,11 @@ public class MyHashMapTest {
         Assert.assertEquals("Tuesday", actual);
     }
 
+    @Test (expected = NoSuchElementException.class)
+    public void removeException() {
+        testMap.remove("firstMonday");
+    }
+
     @Test
     public void clear() {
         testMap.clear();
@@ -47,5 +54,8 @@ public class MyHashMapTest {
         Assert.assertEquals(expected,actual);
     }
 
-
+    @Test (expected = NoSuchElementException.class)
+    public void getException() {
+        String actual = testMap.get("secondTuesday");
+    }
 }

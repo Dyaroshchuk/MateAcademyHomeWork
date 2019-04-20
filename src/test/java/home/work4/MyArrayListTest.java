@@ -8,7 +8,7 @@ public class MyArrayListTest {
     private MyList<String> testArrayList;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         testArrayList = new MyArrayList<>();
         testArrayList.add("Monday");
         testArrayList.add("Tuesday");
@@ -28,6 +28,11 @@ public class MyArrayListTest {
         String actual = testArrayList.get(1);
         String expected = "newTuesday";
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void addIndexException() {
+        testArrayList.add("newValue", 15);
     }
 
     @Test
@@ -54,6 +59,12 @@ public class MyArrayListTest {
 
     }
 
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void getException() {
+        String actual = testArrayList.get(15);
+
+    }
+
     @Test
     public void set() {
         testArrayList.set("newTuesday", 1);
@@ -62,11 +73,20 @@ public class MyArrayListTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void setException() {
+        testArrayList.set("newTuesday", 15);
+    }
+
     @Test
     public void removeByIndex() {
         testArrayList.remove(1);
         Assert.assertEquals(1, testArrayList.size());
+    }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void removeByIndexException() {
+        testArrayList.remove(15);
     }
 
     @Test

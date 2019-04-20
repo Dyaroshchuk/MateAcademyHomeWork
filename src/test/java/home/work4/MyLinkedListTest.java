@@ -8,7 +8,7 @@ public class MyLinkedListTest {
     private MyList<String> testLinkedList;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         testLinkedList = new MyLinkedList<>();
         testLinkedList.add("Monday");
         testLinkedList.add("Tuesday");
@@ -28,6 +28,11 @@ public class MyLinkedListTest {
         String actual = testLinkedList.get(1);
         String expected = "newTuesday";
         Assert.assertEquals(actual, expected);
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void addByIndexException() {
+        testLinkedList.add("newTuesday", 15);
     }
 
     @Test
@@ -53,6 +58,11 @@ public class MyLinkedListTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void getException() {
+        String actual = testLinkedList.get(15);
+    }
+
     @Test
     public void set() {
         testLinkedList.set("newTuesday", 1);
@@ -61,10 +71,20 @@ public class MyLinkedListTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void setException() {
+        testLinkedList.set("newTuesday", 15);
+    }
+
     @Test
     public void removeByIndex() {
         testLinkedList.remove(1);
         Assert.assertEquals(testLinkedList.size(), 1);
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void removeByIndexException() {
+        testLinkedList.remove(15);
     }
 
     @Test
